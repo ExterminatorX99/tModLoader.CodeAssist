@@ -14,8 +14,6 @@ namespace tModLoader.CodeAssist.Terraria.ID
 		//if the server accepts vanilla clients and the client sent a vanilla version tModLoader flags them as a vanilla client and communicates using an unmodified protocol
 		//otherwise sends SyncMods instead of LoadPlayer
 		public const byte Hello = 1;
-		[Obsolete("Use MessageID.Hello")]
-		public const byte ClientHello = Hello;
 		//kick with reason, displays the text "{ip} was booted: {reason}" in the server console
 		public const byte Kick = 2;
 		//sent once the server has accepted the player and assigned an id
@@ -25,8 +23,6 @@ namespace tModLoader.CodeAssist.Terraria.ID
 		//client sends RequestWorldInfo
 		//client connection state 2->3
 		public const byte PlayerInfo = 3;
-		[Obsolete("Use MessageID.PlayerInfo")]
-		public const byte LoadPlayer = PlayerInfo;
 		//sends a player's name, visual configuration, accessory visibility, difficulty and extra accessory flag
 		//kicks if the playername is empty, too long, or the same as another player on the server
 		//forwarded to other clients
@@ -40,8 +36,6 @@ namespace tModLoader.CodeAssist.Terraria.ID
 		//server calls RemoteClient.ResetSections and state 1->2
 		//server responds with WorldInfo and InvasionProgressReport
 		public const byte RequestWorldData = 6;
-		[Obsolete("Use MessageID.RequestWorldData")]
-		public const byte RequestWorldInfo = RequestWorldData;
 		//time of day, weather, events, world size and name, biome info, killed bosses, etc
 		//sent whenever any of the properties in the packet change (except time of day, which gets synced whenever other properties change anyway)
 		//client connection state 3->4
@@ -56,13 +50,9 @@ namespace tModLoader.CodeAssist.Terraria.ID
 		//NPCKillCountDeathTally for the first 250 NPCs (though I don't know why)
 		//StartPlaying, TileCounts, WorldInfo, MoonlordCountdown, UpdateTowerShieldStrengths
 		public const byte SpawnTileData = 8;
-		[Obsolete("Use MessageID.SpawnTileData")]
-		public const byte RequestTileData = SpawnTileData;
 		//sets the client status text
 		//only use is before NetMessage.SendSection with message "Receiving tile data"
 		public const byte StatusTextSize = 9;
-		[Obsolete("Use MessageID.StatusTextSize")]
-		public const byte StatusText = StatusTextSize;
 		//sends a compressed 200x150 block section of the map
 		//sent from NetMessage.SendSection which also sends NPCInfo for all npcs in the section
 		public const byte TileSection = 10;
@@ -70,8 +60,6 @@ namespace tModLoader.CodeAssist.Terraria.ID
 		//tModLoader changes walls from byte to short
 		//sent after a NetMessage.SendSection block
 		public const byte TileFrameSection = 11;
-		[Obsolete("Use MessageID.TileFrameSection")]
-		public const byte FrameSection = TileFrameSection;
 		//sent from Player.Spawn
 		//if this is the first spawn for a connected client
 		//    RemoteClient state 3->10
@@ -79,8 +67,6 @@ namespace tModLoader.CodeAssist.Terraria.ID
 		//    responds with AnglerQuest
 		//forwarded to other clients
 		public const byte PlayerSpawn = 12;
-		[Obsolete("Use MessageID.PlayerSpawn")]
-		public const byte SpawnPlayer = PlayerSpawn;
 		//player movement keystates, item actions, grapple, gravity, stealth and velocity
 		//primarily sent from sync with clientClone
 		//forwarded to other clients
@@ -88,15 +74,11 @@ namespace tModLoader.CodeAssist.Terraria.ID
 		//sets player[i].active
 		//sent from NetMessage.syncPlayers
 		public const byte PlayerActive = 14;
-		[Obsolete("Deprecated.")]
-		public const byte Unused15 = 15;
 		//player's current and maximum life
 		//sent on change, and as part of various syncs
 		//dead flag is set if life <= 0
 		//forwarded to other clients
 		public const byte PlayerLifeMana = 16;
-		[Obsolete("Use MessageID.PlayerLifeMana")]
-		public const byte PlayerHealth = PlayerLifeMana;
 		//changeType, x, y, tileType, style,
 		//changeType WorldGen.{
 		//    KillTile = 0, PlaceTile = 1, KillWall = 2, PlaceWall = 3, KillTileNoItem = 4,
@@ -105,12 +87,8 @@ namespace tModLoader.CodeAssist.Terraria.ID
 		//forwarded to other clients
 		//if changeType == PlaceTile and tileType == TileID.Sand sends a 1 block TileSquare
 		public const byte TileManipulation = 17;
-		[Obsolete("Use MessageID.TileManipulation")]
-		public const byte TileChange = TileManipulation;
 		//doesn't seem like this is actually sent anywhere
 		public const byte SetTime = 18;
-		[Obsolete("Use MessageID.SetTime")]
-		public const byte MenuSunMoon = SetTime;
 		//changeType, x, y, direction
 		//changeType WorldGen.{
 		//    OpenDoor = 0, CloseDoor = 1,
@@ -118,8 +96,6 @@ namespace tModLoader.CodeAssist.Terraria.ID
 		//    ShiftTallGate(closing = false) = 4, ShiftTallGate(closing = true) = 5 }
 		//forwarded to other clients
 		public const byte ToggleDoorState = 19;
-		[Obsolete("Use MessageID.ToggleDoorState")]
-		public const byte ChangeDoor = ToggleDoorState;
 		//sends a square area of tile data (with upper left x, y) and given size (minimum 1)
 		//tModLoader changes walls from byte to short
 		//forwarded to other clients
@@ -140,7 +116,6 @@ namespace tModLoader.CodeAssist.Terraria.ID
 		public const byte SyncNPC = 23;
 		//hit an NPC, presumably unused because it uses the item damage/knockback directly without the random variance
 		public const byte UnusedMeleeStrike = 24;
-		public const byte UnusedStrikeNPC = UnusedMeleeStrike;
 		//a line of chat text, with sender and colour information
 		[Obsolete("Deprecated. Use NetTextModule instead.")]
 		public const byte ChatText = 25;
@@ -155,16 +130,12 @@ namespace tModLoader.CodeAssist.Terraria.ID
 		//npcID, damage, knockback, direction, crit
 		//forwarded to other clients
 		public const byte DamageNPC = 28;
-		[Obsolete("Use MessageID.DamageNPC")]
-		public const byte StrikeNPC = 28;
 		//sent from Projectile.Kill
 		//forwarded to other clients
 		public const byte KillProjectile = 29;
 		//forwarded to other clients
 		//forwarding includes the chat message "{player} has {en/dis}abled PvP"
 		public const byte TogglePVP = 30;
-		[Obsolete("Use MessageID.TogglePVP")]
-		public const byte PlayerPvP = 30;
 		//if the server finds a chest not in use, it responds with
 		//SyncChestItem for every item in the chest
 		//SyncPlayerChest, SyncPlayerChestIndex
@@ -194,14 +165,10 @@ namespace tModLoader.CodeAssist.Terraria.ID
 		//restores health
 		//forwarded to other clients
 		public const byte PlayerHeal = 35;
-		[Obsolete("Use MessageID.PlayerHeal")]
-		public const byte HealEffect = 35;
 		//Player.zone1 and zone2, containing the biome information
 		//forwarded to other clients
 		//sent on change
 		public const byte SyncPlayerZone = 36;
-		[Obsolete("Use MessageID.SyncPlayerZone")]
-		public const byte PlayerZone = 36;
 		//sent by the server to display the password input menu.
 		//sets RemoteClient.State = -1
 		public const byte RequestPassword = 37;
@@ -211,13 +178,9 @@ namespace tModLoader.CodeAssist.Terraria.ID
 		//sent by the server when the item release count hits 300 (every 5 seconds)
 		//client responds with ItemOwner
 		public const byte ReleaseItemOwnership = 39;
-		[Obsolete("Use MessageID.ReleaseItemOwnership")]
-		public const byte ResetItemOwner = 39;
 		//Player.talkNPC, sent on change
 		//forwarded to other clients
 		public const byte SyncTalkNPC = 40;
-		[Obsolete("Use MessageID.SyncTalkNPC")]
-		public const byte PlayerTalkingNPC = 40;
 		//Player.itemRotation, itemAnimation and channel
 		//forwarded to other clients
 		public const byte ItemAnimation = 41;
@@ -368,7 +331,6 @@ namespace tModLoader.CodeAssist.Terraria.ID
 		public const byte SocialHandshake = 93;
 		public const byte Unused94 = 94;
 		public const byte MurderSomeoneElsesPortal = 95;
-		public const byte MurderSomeoneElsesProjectile = MurderSomeoneElsesPortal;
 		public const byte TeleportPlayerThroughPortal = 96;
 		public const byte AchievementMessageNPCKilled = 97;
 		public const byte AchievementMessageEventHappened = 98;
