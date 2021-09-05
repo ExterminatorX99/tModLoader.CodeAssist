@@ -22,6 +22,7 @@
     <Copyright>Copyright</Copyright>
     <PackageTags>tModLoader.CodeAssist, analyzers, tModLoader, Terraria</PackageTags>
     <NoPackageAnalysis>true</NoPackageAnalysis>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
