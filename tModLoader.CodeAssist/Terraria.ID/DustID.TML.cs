@@ -2,16 +2,14 @@
 {
 	public partial class DustID
 	{
-		//Naming is based on the best approximation of the earliest or most popular implementation.
-		public const short Grass_Small = 3;
+		// Naming is based on the best approximation of the earliest or most popular implementation.
+		// There are a few duplicates, unlike other ID classes, since some dust are used for different purposes.
+		public const short WoodFurniture = 7;
 		public const short HeartCrystal = 12;
 		public const short Glass = 13;
 		public const short Demonite = 14;
 		public const short Corruption = 14;
 		public const short MagicMirror = 15;
-		public const short Cloud = 16;
-		public const short Corruption_Gravity = 17;
-		public const short Vile = 18;
 		public const short Sunflower = 19;
 		public const short PurificationPowder = 20;
 		public const short VilePowder = 21; // Assumption
@@ -20,11 +18,8 @@
 		public const short Meteorite = 23;
 		public const short CorruptionThorns = 24;
 		public const short MeteorHead = 25;
-		public const short Bone = 26;
 		public const short GoblinSorcerer = 27;
 		public const short Clay = 28;
-		public const short DungeonWater_Old = 29;
-		public const short Sand = 32;
 		/// <summary>
 		/// Use Dust.dustWater() if you want to calculate water dust based on water style
 		/// </summary>
@@ -33,31 +28,21 @@
 		/// Only survives while in liquid
 		/// </summary>
 		public const short BreatheBubble = 34;
-		/// <summary>
-		/// Lava particles, only survives while in liquid with gravity enabled; survives out of liquid with gravity disabled
-		/// </summary>
-		public const short LavaBubbles = 35;
 		public const short Ash = 36;
 		public const short Obsidian = 37;
 		public const short Mud = 38;
 		public const short JungleGrass = 39;
-		public const short JungleGrass_Small = 40;
 		/// <summary>
 		/// Wanders and lingers with gravity enabled.
 		/// </summary>
 		public const short GlowingMushroom = 41;
 		public const short Harpy = 42;
 		/// <summary>
-		/// A notable example of it's use is the sparkle on tiles caused by Main.tileShine
-		/// </summary>
-		public const short Sparkle = 43;
-		/// <summary>
 		/// Wanders and lingers with gravity enabled.
 		/// </summary>
 		public const short JungleSpore = 44;
 		public const short ManaRegeneration = 45;
 		public const short Poisoned = 46;
-		public const short HallowedGrass = 47;
 		public const short Cobalt = 48;
 		public const short Mythril = 49;
 		public const short Adamantine = 50;
@@ -77,13 +62,6 @@
 		/// Stuff like Enchanted Boomerang, Enchanted Sword, and Jester Arrows
 		/// </summary>
 		public const short Enchanted_Pink = 58;
-		public const short BlueTorch = 59;
-		public const short RedTorch = 60;
-		public const short GreenTorch = 61;
-		public const short PurpleTorch = 62;
-		public const short WhiteTorch = 63;
-		public const short YellowTorch = 64;
-		public const short DemonTorch = 65;
 		/// <summary>
 		/// Lingers and scales up with gravity enabled
 		/// </summary>
@@ -93,7 +71,6 @@
 		public const short Gastropod = 72;
 		public const short PinkFairy = 73;
 		public const short GreenFairy = 74;
-		public const short CursedTorch = 75;
 		/// <summary>
 		/// Wanders and lingers with gravity enabled
 		/// </summary>
@@ -102,19 +79,8 @@
 		public const short RichMahogany = 78;
 		public const short Pearlwood = 79;
 		public const short UnusedBrown = 85; // ?????, need to dig deeper
-		public const short AmethystBolt = 86;
-		public const short TopazBolt = 87;
-		public const short SapphireBolt = 88;
-		public const short EmeraldBolt = 89;
-		public const short RubyBolt = 90;
-		public const short DiamondBolt = 91;
 		public const short Frost = 92;
 		public const short FrostStaff = 92;
-		public const short Moss_Green = 93;
-		public const short Moss_Yellow = 94;
-		public const short Moss_Red = 95;
-		public const short Moss_Blue = 96;
-		public const short Moss_Purple = 97;
 		/// <summary>
 		/// Use Dust.dustWater() if you want to calculate water dust based on water style
 		/// </summary>
@@ -173,7 +139,6 @@
 		/// </summary>
 		public const short Water_Crimson = 123;
 		public const short SandstormInABottle = 124;
-		public const short CrimsonGrass = 125;
 		public const short Shadewood = 126;
 		public const short Flare = 127;
 		public const short Chlorophyte = 128;
@@ -183,10 +148,8 @@
 		public const short Firework_Blue = 132;
 		public const short Firework_Yellow = 133;
 		public const short Firework_Pink = 134;
-		public const short IceTorch = 135;
 		public const short Crimslime = 136; // Better name may be available
 		public const short IcyMerman = 137; // Better name may be available
-		public const short Amber = 138;
 		public const short Confetti_Blue = 139;
 		public const short Confetti_Green = 140;
 		public const short Confetti_Pink = 141;
@@ -204,16 +167,10 @@
 		public const short Bee = 150;
 		public const short SeaSnail = 151;
 		public const short Squid = 151;
-		/// <summary>
-		/// Only survives while in liquid with gravity enabled; survives out of liquid with gravity disabled
-		/// </summary>
-		public const short HoneyBubbles = 152;
-		public const short Honey = 153;
+		public const short Honey2 = 153;
 		public const short Rain = 154;
 		public const short Ambient_DarkBrown = 155; // Better name may be available
-		public const short Ultrabright = 156;
 		public const short ChlorophyteWeapon = 157;
-		public const short OrangeTorch = 158;
 		public const short Teleporter = 159;
 		public const short MagnetSphere = 160;
 		public const short IceGolem = 161;
@@ -228,7 +185,6 @@
 		/// Lingers and scales with gravity enabled
 		/// </summary>
 		public const short PlanteraBulb = 168;
-		public const short IchorTorch = 169;
 		public const short Ichor = 170;
 		public const short Venom = 171;
 		public const short DungeonWater = 172;
@@ -258,7 +214,7 @@
 		public const short BatScepter = 195;
 		public const short Everscream = 196;
 		public const short NorthPole = 197;
-		public const short Firefly = 198;
+		public const short FireflyHit = 198;
 		public const short Butterfly = 199;
 		public const short Worm = 200;
 		public const short Snail = 201;
@@ -303,9 +259,7 @@
 		public const short ViciousPowder = 231;
 		public const short GoldCritter = 232;
 		public const short GoldCritter_LessOutline = 233;
-		public const short BoneTorch = 234;
 		public const short LifeDrain = 235;
-		public const short PinkTorch = 242;
 		public const short FrostDaggerfish = 252;
 		public const short TsunamiInABottle = 253;
 		public const short SailfishBoots = 253;
