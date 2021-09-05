@@ -11,7 +11,7 @@ using tModLoader.CodeAssist.Terraria.ID;
 namespace tModLoader.CodeAssist
 {
 	[DiagnosticAnalyzer(LanguageNames.CSharp)]
-	public partial class tModLoaderCodeAssistAnalyzer : DiagnosticAnalyzer
+	public class tModLoaderCodeAssistAnalyzer : DiagnosticAnalyzer
 	{
 		public const string ChangeMagicNumberToIDDiagnosticId = "ChangeMagicNumberToID";
 
@@ -55,6 +55,7 @@ namespace tModLoader.CodeAssist
 			MethodParameterToIDTypeBindings = new List<MethodParameterToIDTypeBinding>
 			{
 				new("Terraria.Item.CloneDefaults", "Terraria.Item.CloneDefaults(int)", new[] { "Int32" }, 0, "ItemID", ItemID.Search),
+				new("Terraria.Item.SetDefaults", "Terraria.Item.SetDefaults(int)", new[] { "Int32" }, 0, "ItemID", ItemID.Search),
 				new("Terraria.ModLoader.ModRecipe.AddTile", "Terraria.ModLoader.ModRecipe.AddTile(int)", new[] { "Int32" }, 0, "TileID", TileID.Search),
 				new("Terraria.ModLoader.ModRecipe.AddIngredient", "Terraria.ModLoader.ModRecipe.AddIngredient(int, int)", new[] { "Int32", "Int32" }, 0, "ItemID", ItemID.Search),
 				new("Terraria.ModLoader.ModRecipe.SetResult", "Terraria.ModLoader.ModRecipe.SetResult(int, int)", new[] { "Int32", "Int32" }, 0, "ItemID", ItemID.Search),
