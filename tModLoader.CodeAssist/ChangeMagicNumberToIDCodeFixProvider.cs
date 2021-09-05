@@ -75,7 +75,7 @@ namespace tModLoader.CodeAssist
             var newRoot = root.ReplaceNode(literalExpressionSyntax, name);
 
 
-            var compilationUnitSyntax = newRoot as CompilationUnitSyntax;
+            var compilationUnitSyntax = (CompilationUnitSyntax)newRoot;
 
             var systemThreadingUsingName =
                 SyntaxFactory.QualifiedName(
